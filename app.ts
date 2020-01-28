@@ -1,24 +1,16 @@
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR
+let userInput: unknown;
+// let userInput: any;
+
+let userName: string;
+
+userInput = 5;
+userInput = "Max";
+if (typeof userInput === "string") {
+  userName = userInput;
 }
 
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: "Michael",
-  age: 30,
-  hobbies: ["Sports", "cookings"],
-  role: [2, "author"]
-};
-person.role.push("hello");
-let favoriteActivities: string[];
+function generateError(message: string, code: number): never {
+  throw { message, errorCode: code };
+}
 
-let test = { a: 1, b: 2 };
-test = { b: 4, c: 2 };
-
-console.log(person.name);
+generateError("An error occured!", 500);
